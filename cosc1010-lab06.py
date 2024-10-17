@@ -1,8 +1,8 @@
-# Your Name Here
+# Patrick McGrath
 # UWYO COSC 1010
-# Submission Date
+# 10/17/2024
 # Lab 06
-# Lab Section: 
+# Lab Section: 12
 # Sources, people worked with, help given to: 
 # your
 # comments
@@ -70,6 +70,34 @@ print(len(random_string)) # Print out the size for reference
 # Output which letter occurred the most 
 # Output which letter occurred the least 
 # Output what the percentage of the string each character is, again in alphabetical
+
+letter_occur = {}
+
+for letter in random_string:
+    if letter not in letter_occur.keys():
+        letter_occur[letter] = 1 
+    else:
+        letter_occur[letter] += 1
+print(letter_occur)
+
+sort_key = dict(sorted(letter_occur.items()))
+print(sort_key)
+
+sorted_letter = sorted(letter_occur.values())
+for sorted in letter_occur:
+    if letter_occur[sorted] == sorted_letter[-1]:
+        print(f"The letter that occured the most is {sorted}")
+
+for sorted in letter_occur:
+    if letter_occur[sorted] == sorted_letter[0]:
+        print(f"The letter that occured the least is {sorted}")
+
+for percent in sort_key:
+    sort_key[percent] = (sort_key[percent]/len(random_string)) * 100
+print(sort_key)
+
+
+
 
 #Tips and trick:
 # You can iterate through strings like you would a list
